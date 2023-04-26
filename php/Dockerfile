@@ -1,15 +1,12 @@
-FROM php:7.4-fpm
+FROM php:8.2.5-fpm
 
-# Install additional PHP extensions if needed
-RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-# Copy the PHP application files into the container
-COPY . /var/www/html/
-
-# Set permissions for the PHP application files
-RUN chown -R www-data:www-data /var/www/html
+RUN apt-get update && apt-get install -y zip unzip libpq-dev libpng-dev libjpeg-dev libfreetype6-dev  libjpeg62-turbo-dev libgd-dev
+RUN docker-php-ext-install pdo \
+    && docker-php-ext-install pdo_mysql \
+    && docker-php-ext-install pdo_pgsql 
 
 EXPOSE 9000
 
-# Start the PHP-FPM service
-CMD ["php-fpm"]
+CMD ["php-fpm", "-F"]
+
