@@ -2,48 +2,42 @@ version: '3.8'
 
 services:
 
-  nginx:
-      image: nginx
-      container_name: nginx
-      ports:
-        - 8080:8080
-      volumes:
-        - ./src:/var/www/html
-        - ./nginx/conf:/etc/nginx/
-        - ./nginx/logs:/var/log/nginx
-      depends_on:
-        - php
-      networks:
+  web:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+        - "8080:80"
+    volumes:
+        - ./src:/code
+        - ./site.conf:/etc/nginx/conf.d/default.conf
+    networks:
         - camagru
-      environment: 
-        - NGINX_PORT=80
+
   php:
-      container_name: php
       build:
         context: ./php
-        dockerfile: Dockerfile
-      volumes:
-        - ./src:/var/www/html
-        - ./php/conf/:/usr/local/etc
+      container_name: php
       expose: 
         - 9000
+      volumes:
+        - ./src:/code
       networks:
         - camagru
-      restart: on-failure
-  db:
-    container_name: db
-    image: postgres
-    restart: on-failure
-    volumes:
-      - postgre_db:/var/lib/mysql
-    env_file:
-      - .env
-    ports:
-      - 5432:5432
+
+#   db:
+#     container_name: db
+#     image: postgres
+#     restart: on-failure
+#     volumes:
+#       - postgre_db:/var/lib/mysql
+#     env_file:
+#       - .env
+#     ports:
+#       - 5432:5432
 
 
 networks:
   camagru:
 
-volumes:
-  postgre_db:
+# volumes:
+#   postgre_db:

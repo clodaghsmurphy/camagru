@@ -8,5 +8,5 @@ RUN docker-php-ext-install pdo \
 
 EXPOSE 9000
 
-CMD ["php-fpm", "-F"]
+RUN usermod -u 1000 www-data
 
