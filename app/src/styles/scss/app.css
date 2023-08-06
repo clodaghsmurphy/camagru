@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap");
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.login-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  height: 100vh;
+  float: left;
+}
+
+.login-right {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  width: 50%;
+  float: right;
+}
+.login-right .login-right-content {
+  z-index: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.28);
+  width: 90%;
+  height: 90%;
+  margin: auto;
+}
+.login-right .login-right-content .content {
+  color: white;
+  opacity: unset;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
+}
+
+.LoginForm {
+  display: flex;
+  font-family: "Work Sans", sans-serif;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  margin: 0 auto;
+}
+.LoginForm form {
+  width: 350px;
+}
+.LoginForm h1 {
+  text-align: left;
+  align-self: flex-start;
+}
+.LoginForm label {
+  font-weight: bold;
+  display: block;
+  margin: 5px 0;
+  width: 100%;
+  text-align: left;
+}
+.LoginForm input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 0px;
+}
+.LoginForm .login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+  flex-direction: row;
+}
+.LoginForm .login-options input {
+  width: 10%;
+  height: 20px;
+  padding: 5px;
+}
+.LoginForm .login-options label {
+  width: 40%;
+  font-weight: normal;
+}
+.LoginForm .login-options a {
+  width: 50%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(120deg, #397ff1 0%, #c2e9fb 100%);
+  font-size: 16px;
+}
+.LoginForm button {
+  width: 100%;
+  height: 40px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #a1c4fd;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}/*# sourceMappingURL=app.css.map */
